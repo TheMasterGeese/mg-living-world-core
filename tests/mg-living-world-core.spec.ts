@@ -11,17 +11,16 @@ let gm_uid: string;
  * Expected Values
  */
  const EXPECTED_PROXY_GM_UID : string = TestEnvironment.PROXY_GM_UID;
-
+ const EXPECTED_GAMEMASTER_UID : string = TestEnvironment.GAMEMASTER_UID;
 /**
  * Element selectors
  */
 const MODULE_SETTINGS_TAB = '#client-settings > section > form.flexcol > nav > a[data-tab="modules"]';
 const CONFIGURE_SETTINGS_BUTTON = '#settings-game > button[data-action="configure"]';
-const GM_PROXY_OPTION = `select[name="mg-living-world-core.GMProxy"] > option[value="${EXPECTED_PROXY_GM_UID}"]:checked`;
+const GM_PROXY_SELECT = 'select[name="mg-living-world-core.GMProxy"]';
+const GAMEMASTER_OPTION_SELECTED = `${GM_PROXY_SELECT} > option[value="${EXPECTED_GAMEMASTER_UID}"]:checked`;
+const GM_PROXY_OPTION_SELECTED = `${GM_PROXY_SELECT} > option[value="${EXPECTED_PROXY_GM_UID}"]:checked`;
 
-/**
- * All tests should be enclosed in a test.describe named after the module.
- */
 test.describe('mg-living-world-core', () => {
 
     test('should register settings on init', async ({ page }) => {
@@ -30,12 +29,40 @@ test.describe('mg-living-world-core', () => {
         // Click the settings icon in the sidemenu
         await openModuleSettings(page);
 
-        // make sure the Discord Webhook field is filled out with the expected value.
-        expect(await page.locator(GM_PROXY_OPTION).count()).toEqual(1);
+        // make sure the correct user is selected as a GM Proxy.
+        expect(await page.locator(GM_PROXY_OPTION_SELECTED).count()).toEqual(1);
     });
 
-    // Include any functions common to multiple "should" sections below all of them. Likewise if there are any functions common to all
-    // tests within another test.describe, include them at the end of that test.describe() block.
+    test.describe('should update GM Proxy in settings', () => {
+        test('when player is GM', async ({ page }) => {
+            const newGMProxy = 'Gamemaster';
+            const originalGMProxy = "ProxyGM";
+
+            await logOnAsUser(PLAYER_INDEX.GAMEMASTER, page);
+
+            // Change the gm proxy
+            await openModuleSettings(page);
+            await selectGMProxyThenClose(newGMProxy, page);
+
+            // Verify the gm proxy was changed
+            await openModuleSettings(page);
+            expect(await page.locator(GAMEMASTER_OPTION_SELECTED).count()).toEqual(1);
+
+            // Revert the value of gm proxy to the default value.
+            await selectGMProxyThenClose(originalGMProxy, page);
+            await openModuleSettings(page);
+            expect(await page.locator(GM_PROXY_OPTION_SELECTED).count()).toEqual(1);
+        });
+    });
+    test.describe('should NOT update GM Proxy in settings', () => {
+        test('when player is NOT GM', async ({ page }) => {
+            await logOnAsUser(PLAYER_INDEX.PLAYER, page);
+            await openModuleSettings(page);
+
+            // Expect the field to not exist
+            await expect(page.locator(GM_PROXY_SELECT)).toHaveCount(0);
+        });
+    });
 
     /**
      * Log on to Foundry as a specific user.
@@ -129,18 +156,19 @@ test.describe('mg-living-world-core', () => {
         // Go to the "Module Settings" menu
         await page.locator(MODULE_SETTINGS_TAB).click();
     }
-
     /**
-     * Function that does something
+     * Fills the discord webhook field then closes the module settings view. Assumes that as this function is called, you are in the
+     * module settings view.
      * 
+     * @param newWebhook The new webhook value.
      * @param page The test's page fixture.
      */
-    async function doSomething(page: Page) {
-        await new Promise<void>((resolve) => {
-            console.log(page);
-            console.log(gm_uid);
-            resolve();
-        });
+     async function selectGMProxyThenClose(newProxy: string, page: Page) {
+        await page.locator(GM_PROXY_SELECT).selectOption({ label: newProxy });
+        await Promise.all([
+            page.locator('#client-settings > section > form > footer > button:nth-child(1)').click(),
+            page.waitForSelector(MODULE_SETTINGS_TAB, { state: 'detached' })
+        ]);
     }
 });
 
@@ -149,6 +177,8 @@ test.describe('mg-living-world-core', () => {
  */
 enum PLAYER_INDEX {
     GAMEMASTER = 1,
+    GM_PROXY = 2,
+    PLAYER = 3,
 }
 
 
