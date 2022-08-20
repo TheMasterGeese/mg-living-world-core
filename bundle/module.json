@@ -1,0 +1,28 @@
+{
+	"name": "mg-living-world-core",
+	"title": "MG Living World - Core",
+	"description": "Contains common utilities and functions required for MG Living World modules, has no user-facing components.",
+	"version": "1.0.1",
+	"authors": [
+    	"Khankar#2236"
+  	],
+	"minimumCoreVersion": "9",
+	"compatibleCoreVersion": "9",
+	"esmodules": ["src/mg-living-world-core.js"],
+	"styles": [],
+	"languages": [
+		{ "lang": "en", "name": "English", "path": "lang/en.json" }
+	],
+  	"packs": [],
+  	"system": [],
+  	"socket": true,
+	  "url":		"https://github.com/TheMasterGeese/mg-living-world-core",
+	  "license":	"https://github.com/TheMasterGeese/mg-living-world-core/blob/main/LICENSE",
+	  "manifest":	"https://raw.githubusercontent.com/TheMasterGeese/mg-living-world-core/main/bundle/module.json",
+	  "download":	"https://raw.githubusercontent.com/TheMasterGeese/mg-living-world-core/main/bundle/mg-living-world-core.zip",
+	  "readme":		"https://github.com/TheMasterGeese/mg-living-world-core/blob/main/README.md",
+	  "changelog":	"https://github.com/TheMasterGeese/mg-living-world-core/blob/main/CHANGELOG.md",
+  	"protected": false,
+  	"coreTranslation": false
+}
+
