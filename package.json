@@ -2,7 +2,7 @@
   "name": "mg-living-world-core",
   "author": "Khankar#2236",
   "title": "MG Living World - Core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Contains common utilities and functions required for MG Living World modules, has no user-facing components.",
   "main": "src/mg-living-world-core.ts",
   "devDependencies": {
