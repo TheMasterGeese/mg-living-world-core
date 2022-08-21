@@ -7,6 +7,6 @@ Initial release.
 - Copied the MasterGeeseLivingWorldTools dev environment/documentation to this repo.
 - Created Integration tests for the GMProxy setting.
 
-## Release 1.0.1
+## Release 1.0.2
 - Fixed issue with build scripts referring to root branch name as "main" instead of "master", causing broken links to be generated in module.json
 - Fixed typo in GM Proxy setting description
