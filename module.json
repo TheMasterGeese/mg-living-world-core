@@ -17,11 +17,11 @@
   	"system": [],
   	"socket": true,
 	  "url":		"https://github.com/TheMasterGeese/{{name}}",
-	  "license":	"https://github.com/TheMasterGeese/{{name}}/blob/main/LICENSE",
-	  "manifest":	"https://raw.githubusercontent.com/TheMasterGeese/{{name}}/main/bundle/module.json",
-	  "download":	"https://raw.githubusercontent.com/TheMasterGeese/{{name}}/main/bundle/{{name}}.zip",
-	  "readme":		"https://github.com/TheMasterGeese/{{name}}/blob/main/README.md",
-	  "changelog":	"https://github.com/TheMasterGeese/{{name}}/blob/main/CHANGELOG.md",
+	  "license":	"https://github.com/TheMasterGeese/{{name}}/blob/master/LICENSE",
+	  "manifest":	"https://raw.githubusercontent.com/TheMasterGeese/{{name}}/master/bundle/module.json",
+	  "download":	"https://raw.githubusercontent.com/TheMasterGeese/{{name}}/master/bundle/{{name}}.zip",
+	  "readme":		"https://github.com/TheMasterGeese/{{name}}/blob/master/README.md",
+	  "changelog":	"https://github.com/TheMasterGeese/{{name}}/blob/master/CHANGELOG.md",
   	"protected": false,
   	"coreTranslation": false
 }

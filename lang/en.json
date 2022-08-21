@@ -1,4 +1,4 @@
 {
     "CORE.GMProxyTitle" : "GM Proxy",
-	"CORE.GMProxyHint" : "GM User used to execute some actions that requiring one to be logged on. While this user is not logged on, MG Living World modules may not function correctly."
+	"CORE.GMProxyHint" : "GM User used to execute some actions that requires one to be logged on. While this user is not logged on, MG Living World modules may not function correctly."
 }

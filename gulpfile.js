@@ -93,7 +93,7 @@ function buildSource(keepSources, minifySources = false, output = null) {
 			noSource: true
 		}));
 		else // stream = stream.pipe(tabify(4, false));
-		return stream.pipe(gulp.dest((output || DIST) + SOURCE));
+			return stream.pipe(gulp.dest((output || DIST) + SOURCE));
 	}
 }
 
@@ -188,22 +188,25 @@ exports.lint = lint();
 function test() {
 	return async function test() {
 		// Startup docker container
-		let { stdout, stderr } = await exec(`docker-compose up -d`);
-		console.log(stdout);
-		console.log(stderr);
-		// Wait for the state of the docker container to be "healthy". Waiting for the container startup isn't enough, it takes 
-		// roughly 1 more minute after the container is started for FoundryVTT to be ready, indicated by the "healthy" status.
-		do {
-			({ stdout, stderr } = await exec(`docker inspect --format="{{json .State.Health.Status}}" ${DOCKER_CONTAINER}`));
-		} while (stdout !== '"healthy"\n');
-		// run tests
-		({ stdout, stderr } = await exec(`npx playwright test`));
-		console.log(stdout);
-		console.log(stderr);
-		// tear down docker container
-		({ stdout, stderr } = await exec(`docker-compose down`));
-		console.log(stdout);
-		console.log(stderr);
+		try {
+			let { stdout, stderr } = await exec(`docker-compose up -d`);
+			console.log(stdout);
+			console.log(stderr);
+			// Wait for the state of the docker container to be "healthy". Waiting for the container startup isn't enough, it takes 
+			// roughly 1 more minute after the container is started for FoundryVTT to be ready, indicated by the "healthy" status.
+			do {
+				({ stdout, stderr } = await exec(`docker inspect --format="{{json .State.Health.Status}}" ${DOCKER_CONTAINER}`));
+			} while (stdout !== '"healthy"\n');
+			// run tests
+			({ stdout, stderr } = await exec(`npx playwright test`));
+			console.log(stdout);
+			console.log(stderr);
+			// tear down docker container
+		} finally {
+			({ stdout, stderr } = await exec(`docker-compose down`));
+			console.log(stdout);
+			console.log(stderr);
+		}
 	}
 }
 exports.test = test();

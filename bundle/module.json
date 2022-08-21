@@ -17,11 +17,11 @@
   	"system": [],
   	"socket": true,
 	  "url":		"https://github.com/TheMasterGeese/mg-living-world-core",
-	  "license":	"https://github.com/TheMasterGeese/mg-living-world-core/blob/main/LICENSE",
-	  "manifest":	"https://raw.githubusercontent.com/TheMasterGeese/mg-living-world-core/main/bundle/module.json",
-	  "download":	"https://raw.githubusercontent.com/TheMasterGeese/mg-living-world-core/main/bundle/mg-living-world-core.zip",
-	  "readme":		"https://github.com/TheMasterGeese/mg-living-world-core/blob/main/README.md",
-	  "changelog":	"https://github.com/TheMasterGeese/mg-living-world-core/blob/main/CHANGELOG.md",
+	  "license":	"https://github.com/TheMasterGeese/mg-living-world-core/blob/master/LICENSE",
+	  "manifest":	"https://raw.githubusercontent.com/TheMasterGeese/mg-living-world-core/master/bundle/module.json",
+	  "download":	"https://raw.githubusercontent.com/TheMasterGeese/mg-living-world-core/master/bundle/mg-living-world-core.zip",
+	  "readme":		"https://github.com/TheMasterGeese/mg-living-world-core/blob/master/README.md",
+	  "changelog":	"https://github.com/TheMasterGeese/mg-living-world-core/blob/master/CHANGELOG.md",
   	"protected": false,
   	"coreTranslation": false
 }
