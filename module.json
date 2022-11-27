@@ -1,28 +1,31 @@
 {
-	"name": "{{name}}",
+	"id": "{{name}}",
 	"title": "{{title}}",
 	"description": "{{description}}",
 	"version": "{{version}}",
 	"authors": [
-    	"Khankar#2236"
-  	],
-	"minimumCoreVersion": "9",
-	"compatibleCoreVersion": "9",
+		{
+			"name": "MasterGeese",
+			"email": "themastergeese@gmail.com",
+			"discord": "Khankar#2236"
+		}
+	],
+	"compatibility": {
+		"minimum": 10,
+		"verified": "10.290"
+	},
 	"esmodules": "{{sources}}",
 	"styles": "{{css}}",
 	"languages": [
 		{ "lang": "en", "name": "English", "path": "lang/en.json" }
 	],
   	"packs": [],
-  	"system": [],
   	"socket": true,
 	  "url":		"https://github.com/TheMasterGeese/{{name}}",
 	  "license":	"https://github.com/TheMasterGeese/{{name}}/blob/master/LICENSE",
 	  "manifest":	"https://raw.githubusercontent.com/TheMasterGeese/{{name}}/master/bundle/module.json",
 	  "download":	"https://raw.githubusercontent.com/TheMasterGeese/{{name}}/master/bundle/{{name}}.zip",
 	  "readme":		"https://github.com/TheMasterGeese/{{name}}/blob/master/README.md",
-	  "changelog":	"https://github.com/TheMasterGeese/{{name}}/blob/master/CHANGELOG.md",
-  	"protected": false,
-  	"coreTranslation": false
+	  "changelog":	"https://github.com/TheMasterGeese/{{name}}/blob/master/CHANGELOG.md"
 }
 

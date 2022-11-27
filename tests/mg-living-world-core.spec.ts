@@ -12,10 +12,12 @@ let gm_uid: string;
  */
  const EXPECTED_PROXY_GM_UID : string = TestEnvironment.PROXY_GM_UID;
  const EXPECTED_GAMEMASTER_UID : string = TestEnvironment.GAMEMASTER_UID;
+
 /**
  * Element selectors
  */
-const MODULE_SETTINGS_TAB = '#client-settings > section > form.flexcol > nav > a[data-tab="modules"]';
+const SETTINGS_TAB = '#sidebar-tabs > a[data-tab="settings"] > .fas.fa-cogs';
+const CLIENT_SETTINGS = '#client-settings';
 const CONFIGURE_SETTINGS_BUTTON = '#settings-game > button[data-action="configure"]';
 const GM_PROXY_SELECT = 'select[name="mg-living-world-core.GMProxy"]';
 const GAMEMASTER_OPTION_SELECTED = `${GM_PROXY_SELECT} > option[value="${EXPECTED_GAMEMASTER_UID}"]:checked`;
@@ -29,8 +31,11 @@ test.describe('mg-living-world-core', () => {
         // Click the settings icon in the sidemenu
         await openModuleSettings(page);
 
+        const gmProxyChoiceElement = await page.locator(GM_PROXY_SELECT).elementHandle();
+        const gmProxyChoiceValue = await gmProxyChoiceElement.inputValue();
+
         // make sure the correct user is selected as a GM Proxy.
-        expect(await page.locator(GM_PROXY_OPTION_SELECTED).count()).toEqual(1);
+        expect(gmProxyChoiceValue).toEqual(EXPECTED_PROXY_GM_UID);
     });
 
     test.describe('should update GM Proxy in settings', () => {
@@ -146,16 +151,16 @@ test.describe('mg-living-world-core', () => {
      * 
      * @param page The test's page fixture.
      */
-    async function openModuleSettings(page: Page) {
-        // Click the settings icon in the sidemenu
-        await page.locator('#sidebar-tabs > a[data-tab="settings"] > .fas.fa-cogs').click();
+     async function openModuleSettings(page: Page) {
+        await Promise.all([
+            // Click the settings icon in the sidemenu
+            page.locator(SETTINGS_TAB).click(),
 
-        // Go to the "Configure settings" menu
-        await page.locator(CONFIGURE_SETTINGS_BUTTON).click();
-
-        // Go to the "Module Settings" menu
-        await page.locator(MODULE_SETTINGS_TAB).click();
+            // Go to the "Configure settings" menu
+            page.locator(CONFIGURE_SETTINGS_BUTTON).click()
+        ]);
     }
+
     /**
      * Fills the discord webhook field then closes the module settings view. Assumes that as this function is called, you are in the
      * module settings view.
@@ -166,8 +171,8 @@ test.describe('mg-living-world-core', () => {
      async function selectGMProxyThenClose(newProxy: string, page: Page) {
         await page.locator(GM_PROXY_SELECT).selectOption({ label: newProxy });
         await Promise.all([
-            page.locator('#client-settings > section > form > footer > button:nth-child(1)').click(),
-            page.waitForSelector(MODULE_SETTINGS_TAB, { state: 'detached' })
+            page.locator('#client-settings > section > div > form > footer > button').click(),
+            page.waitForSelector(CLIENT_SETTINGS, { state: 'detached' })
         ]);
     }
 });

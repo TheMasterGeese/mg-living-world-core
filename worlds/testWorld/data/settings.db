@@ -1,10 +1,10 @@
-{"key":"mg-living-world-core.GMProxy","value":"\"WDduunF8JMaxNoP3\"","_id":"4FyhK1uT9WSVLL9p"}
-{"key":"pf2e.worldSystemVersion","value":"\"3.12.2.10\"","_id":"6dQIuGyXhTKFUm8I"}
+
+{"_id":"6dQIuGyXhTKFUm8I","key":"pf2e.worldSystemVersion","value":"\"4.4.2\"","_stats":{"systemId":"pf2e","systemVersion":"4.4.2","coreVersion":"10.287","createdTime":null,"modifiedTime":1669568681509,"lastModifiedBy":"iF8XB8q033MxJkU3"}}
 {"key":"core.nue.shownTips","value":"true","_id":"9aCZzGLEOKxdm9wV"}
-{"key":"core.permissions","value":"{\"ACTOR_CREATE\":[3,4],\"BROADCAST_AUDIO\":[2,3,4],\"BROADCAST_VIDEO\":[2,3,4],\"DRAWING_CREATE\":[2,3,4],\"ITEM_CREATE\":[3,4],\"FILES_BROWSE\":[2,3,4],\"FILES_UPLOAD\":[3,4],\"JOURNAL_CREATE\":[2,3,4],\"MACRO_SCRIPT\":[1,2,3,4],\"MESSAGE_WHISPER\":[1,2,3,4],\"NOTE_CREATE\":[2,3,4],\"SETTINGS_MODIFY\":[3,4],\"SHOW_CURSOR\":[1,2,3,4],\"SHOW_RULER\":[1,2,3,4],\"TEMPLATE_CREATE\":[1,2,3,4],\"TOKEN_CREATE\":[3,4],\"TOKEN_CONFIGURE\":[2,3,4],\"WALL_DOORS\":[1,2,3,4]}","_id":"SIZOhHVfjwDEdIo2"}
+{"key":"core.moduleConfiguration","value":"{\"mg-living-world-tools\":false,\"mg-block-initiative\":false,\"mg-living-world-core\":true,\"discord-integration\":false,\"mg-ready-check\":false}","_id":"BNkVW320505e3rBn","_stats":{"systemId":"pf2e","systemVersion":"4.4.2","coreVersion":"10.287","createdTime":null,"modifiedTime":1669568662505,"lastModifiedBy":null}}
+{"key":"core.permissions","value":"{\"ACTOR_CREATE\":[3,4],\"BROADCAST_AUDIO\":[2,3,4],\"BROADCAST_VIDEO\":[2,3,4],\"DRAWING_CREATE\":[2,3,4],\"ITEM_CREATE\":[3,4],\"FILES_BROWSE\":[2,3,4],\"FILES_UPLOAD\":[3,4],\"JOURNAL_CREATE\":[2,3,4],\"MACRO_SCRIPT\":[1,2,3,4],\"MESSAGE_WHISPER\":[1,2,3,4],\"NOTE_CREATE\":[2,3,4],\"SETTINGS_MODIFY\":[3,4],\"SHOW_CURSOR\":[1,2,3,4],\"SHOW_RULER\":[1,2,3,4],\"TEMPLATE_CREATE\":[1,2,3,4],\"TOKEN_CREATE\":[3,4],\"TOKEN_CONFIGURE\":[2,3,4],\"WALL_DOORS\":[1,2,3,4],\"PING_CANVAS\":[1,2,3,4],\"TOKEN_DELETE\":[3,4]}","_id":"SIZOhHVfjwDEdIo2","_stats":{"systemId":"pf2e","systemVersion":"4.4.2","coreVersion":"10.287","createdTime":null,"modifiedTime":1669568639002,"lastModifiedBy":null}}
 {"key":"core.time","value":"0","_id":"TSogPyuzABbMFku0"}
 {"key":"pf2e.worldClock.worldCreatedOn","value":"\"2022-07-24T21:49:55.072Z\"","_id":"nTlNVIqrHyEaKYLr"}
-{"key":"pf2e.worldSchemaVersion","value":"0.764","_id":"x55ufRDd8smIrZoP"}
-{"_id":"x55ufRDd8smIrZoP","key":"pf2e.worldSchemaVersion","value":"0.769"}
-{"_id":"6dQIuGyXhTKFUm8I","key":"pf2e.worldSystemVersion","value":"\"3.13.5.16\""}
-{"key":"core.moduleConfiguration","value":"{\"mg-living-world-tools\":false,\"mg-block-initiative\":false,\"mg-living-world-core\":true,\"discord-integration\":false,\"mg-ready-check\":false}","_id":"BNkVW320505e3rBn"}
+{"_id":"x55ufRDd8smIrZoP","key":"pf2e.worldSchemaVersion","value":"0.8","_stats":{"systemId":"pf2e","systemVersion":"4.4.2","coreVersion":"10.287","createdTime":null,"modifiedTime":1669568681500,"lastModifiedBy":"iF8XB8q033MxJkU3"}}
+{"key":"core.moduleConfiguration","value":"{\"mg-living-world-tools\":false,\"mg-block-initiative\":false,\"mg-living-world-core\":true,\"discord-integration\":false,\"mg-ready-check\":false}","_id":"BNkVW320505e3rBn","_stats":{"systemId":"pf2e","systemVersion":"4.4.2","coreVersion":"10.287","createdTime":null,"modifiedTime":1669569180917,"lastModifiedBy":null}}
+{"key":"mg-living-world-core.GMProxy", "value":"\"WDduunF8JMaxNoP3\"", "_id":"4FyhK1uT9WSVLL9p"}

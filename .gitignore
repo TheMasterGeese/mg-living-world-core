@@ -3,10 +3,4 @@ node_modules/
 /playwright-report/
 /playwright/.cache/
 .env
-dist/
-dist/**/*
 tests/TestEnvironment.ts
-MasterGeeseLivingWorldTools.code-workspace
-/test-results/
-/playwright-report/
-/playwright/.cache/
