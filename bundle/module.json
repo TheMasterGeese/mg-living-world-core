@@ -1,28 +1,31 @@
 {
-	"name": "mg-living-world-core",
+	"id": "mg-living-world-core",
 	"title": "MG Living World - Core",
 	"description": "Contains common utilities and functions required for MG Living World modules, has no user-facing components.",
 	"version": "1.0.2",
 	"authors": [
-    	"Khankar#2236"
-  	],
-	"minimumCoreVersion": "9",
-	"compatibleCoreVersion": "9",
+		{
+			"name": "MasterGeese",
+			"email": "themastergeese@gmail.com",
+			"discord": "Khankar#2236"
+		}
+	],
+	"compatibility": {
+		"minimum": 10,
+		"verified": "10.290"
+	},
 	"esmodules": ["src/mg-living-world-core.js"],
 	"styles": [],
 	"languages": [
 		{ "lang": "en", "name": "English", "path": "lang/en.json" }
 	],
   	"packs": [],
-  	"system": [],
   	"socket": true,
 	  "url":		"https://github.com/TheMasterGeese/mg-living-world-core",
 	  "license":	"https://github.com/TheMasterGeese/mg-living-world-core/blob/master/LICENSE",
 	  "manifest":	"https://raw.githubusercontent.com/TheMasterGeese/mg-living-world-core/master/bundle/module.json",
 	  "download":	"https://raw.githubusercontent.com/TheMasterGeese/mg-living-world-core/master/bundle/mg-living-world-core.zip",
 	  "readme":		"https://github.com/TheMasterGeese/mg-living-world-core/blob/master/README.md",
-	  "changelog":	"https://github.com/TheMasterGeese/mg-living-world-core/blob/master/CHANGELOG.md",
-  	"protected": false,
-  	"coreTranslation": false
+	  "changelog":	"https://github.com/TheMasterGeese/mg-living-world-core/blob/master/CHANGELOG.md"
 }
 
