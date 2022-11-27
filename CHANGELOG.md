@@ -10,3 +10,7 @@ Initial release.
 ## Release 1.0.2
 - Fixed issue with build scripts referring to root branch name as "main" instead of "master", causing broken links to be generated in module.json
 - Fixed typo in GM Proxy setting description
+
+## Release 2.0.0
+- Implemented support for FoundryVTT Version 10, Build 290.
+- Fixed issue where Settings would not open due to not having a default value for Proxy GM.
