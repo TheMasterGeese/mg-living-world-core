@@ -2,7 +2,7 @@
 	"id": "mg-living-world-core",
 	"title": "MG Living World - Core",
 	"description": "Contains common utilities and functions required for MG Living World modules, has no user-facing components.",
-	"version": "1.0.2",
+	"version": "2.0.0",
 	"authors": [
 		{
 			"name": "MasterGeese",
