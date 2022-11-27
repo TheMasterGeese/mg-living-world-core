@@ -20,7 +20,6 @@
 		{ "lang": "en", "name": "English", "path": "lang/en.json" }
 	],
   	"packs": [],
-  	"system": [],
   	"socket": true,
 	  "url":		"https://github.com/TheMasterGeese/{{name}}",
 	  "license":	"https://github.com/TheMasterGeese/{{name}}/blob/master/LICENSE",

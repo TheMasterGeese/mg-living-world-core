@@ -20,7 +20,6 @@
 		{ "lang": "en", "name": "English", "path": "lang/en.json" }
 	],
   	"packs": [],
-  	"system": [],
   	"socket": true,
 	  "url":		"https://github.com/TheMasterGeese/mg-living-world-core",
 	  "license":	"https://github.com/TheMasterGeese/mg-living-world-core/blob/master/LICENSE",
